@@ -10,9 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_24_210227) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_24_212324) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.float "total_amount"
+    t.integer "total_items"
+    t.string "charge_method"
+    t.float "total_peruser"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_bills_on_event_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.integer "total_user"
+    t.boolean "active", default: true
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.bigint "bill_id", null: false
+    t.bigint "user_id"
+    t.string "category"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bill_id"], name: "index_items_on_bill_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +55,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_24_210227) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bills", "events"
+  add_foreign_key "events", "users"
+  add_foreign_key "items", "bills"
+  add_foreign_key "items", "users"
 end
