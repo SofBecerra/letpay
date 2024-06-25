@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :events, only: [:create] do
-    resources :bills, only: [:create]
+  get "events/:event_id/link", to: "events#link", as: :event_link
+
+  resources :events, only: [:new, :create] do
+    resources :bills, only: [:create, :new]
   end
   resources :bills, only: [:show] do
-    resources :items, only: [:create]
+    resources :items, only: [:create, ]
   end
 
   resources :items, only: [:destroy, :update]
