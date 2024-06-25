@@ -1,2 +1,8 @@
 <h1>Vista 2 | http://localhost:3000/events/new</h1>
+<h2>nombre del evento</h2>
 <p>Find me in app/views/events/new.html.erb</p>
+
+<%= simple_form_for @event do |f| %>
+<%= f.input :name %>
+<%= f.submit %>
+<% end %>
