@@ -2,10 +2,12 @@
 <p>Find me in app/views/bills/show.html.erb</p>
 <p>Poner abajo el diplay de los items</p>
 
-      <% @items.each do |item| %>
+      <% @bill.items.each do |item| %>
         <div class="d-flex justify-content-between mt-3">
           <p>
+            <strong><%= item.user.email %></strong>
             <strong><%= item.category %></strong>
+            <strong> $ <%= item.price %></strong>
           </p>
         </div>
       <% end %>
