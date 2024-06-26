@@ -19,3 +19,9 @@
 <%= f.input :price %>
 <%= f.submit %>
 <% end %>
+
+<h3>Aca vamos a hacer las cuentas </h3>
+<p>Total de la cuenta: <%= number_to_currency(@bill.total_amount) %></p>
+<p>Monto total de los Items: <%= number_to_currency(@bill.sum_items) %></p>
+<p>Monto pendiente de asignar: <%= number_to_currency(@bill.remaining_amount) %></p>
+

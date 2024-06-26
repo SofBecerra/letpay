@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   after_create :generate_bill_and_link
 
   def generate_bill_and_link
-    bill = Bill.create(event: Event.last)
+    bill = Bill.create(event: Event.last, total_amount: 0)
     self.link = "www.localhost:3000/bills/#{bill.id}"
     save
   end

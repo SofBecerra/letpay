@@ -7,6 +7,7 @@ class Bill < ApplicationRecord
   end
 
   def remaining_amount
-    total_amount - sum_items
+    return 0 unless total_amount
+    total_amount.to_f - sum_items
   end
 end
