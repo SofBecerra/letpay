@@ -3,7 +3,10 @@ class Bill < ApplicationRecord
   has_many :items
 
   def sum_items
-    total = self.total_amount
-    pay = self.items.map(&:price).sum
+    items.sum(:price)
+  end
+
+  def remaining_amount
+    total_amount - sum_items
   end
 end
