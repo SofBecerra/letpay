@@ -1,2 +1,19 @@
 <h1>show   Vista 4 aqui va la cuenta y los botones y los usuarios http://www.localhost:3000/bills/1</h1>
 <p>Find me in app/views/bills/show.html.erb</p>
+<p>Poner abajo el diplay de los items</p>
+
+      <% @items.each do |item| %>
+        <div class="d-flex justify-content-between mt-3">
+          <p>
+            <strong><%= item.category %></strong>
+          </p>
+        </div>
+      <% end %>
+
+<p>Aqui van agregar los items</p>
+
+<%= simple_form_for ([@bill, @item]) do |f| %>
+<%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes Otros]) %>
+<%= f.input :price %>
+<%= f.submit %>
+<% end %>

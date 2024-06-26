@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
-      redirect_to event_link_path(:event)
+      redirect_to event_link_path(@event)
     else
       render :new, status: :unprocessable_entity
     end
