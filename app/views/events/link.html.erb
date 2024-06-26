@@ -1,4 +1,5 @@
 <h1>Vista 3 Link evento http://www.localhost:3000/events/6/link</h1>
 
 <%= @event.link %>
-<% console %>
+
+<%= link_to 'Continuar',bill_path(@event.bill), class: "btn btn-secondary w-100 mt-3" %>

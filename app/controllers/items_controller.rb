@@ -3,7 +3,15 @@ class ItemsController < ApplicationController
 
   def create
     @bill = Bill.find(params[:bill_id])
-    @item = Item.new(items[params_params])
+    @item = Item.new(item_params)
+    @item.bill = @bill
+    @item.user = current_user
+
+    if @item.save!
+      redirect_to bill_path(@bill)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -19,5 +27,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to bill_path, status: :see_other, notice: 'Item eliminado'
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:category, :price)
   end
 end
