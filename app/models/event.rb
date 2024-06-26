@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
   has_one :bill
+  has_many :users
 
   after_create :generate_bill_and_link
 
