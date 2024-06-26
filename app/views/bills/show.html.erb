@@ -13,7 +13,7 @@
 <p>Aqui van agregar los items</p>
 
 <%= simple_form_for ([@bill, @item]) do |f| %>
-<%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes]) %>
+<%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes Otros]) %>
 <%= f.input :price %>
 <%= f.submit %>
 <% end %>
