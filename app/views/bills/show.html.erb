@@ -5,7 +5,7 @@
       <% @bill.items.each do |item| %>
         <div class="d-flex justify-content-between mt-3">
           <p>
-            <strong><%= item.user.email %></strong>
+            <strong><%= item.user.nickname %></strong>
             <strong><%= item.category %></strong>
             <strong> $ <%= item.price %></strong>
           </p>

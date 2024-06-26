@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :events, only: [:new, :create] do
     resources :bills, only: [:create, :new]
   end
-  resources :bills, only: [:show] do
+  resources :bills, only: [:show, :edit] do
     resources :items, only: [:create, ]
   end
 

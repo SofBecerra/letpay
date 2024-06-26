@@ -1,12 +1,9 @@
 class ItemsController < ApplicationController
 
-
   def create
     @bill = Bill.find(params[:bill_id])
-    @item = Item.new(item_params)
-    @item.bill = @bill
+    @item = @bill.items.new(item_params)
     @item.user = current_user
-
     if @item.save!
       redirect_to bill_path(@bill)
     else
