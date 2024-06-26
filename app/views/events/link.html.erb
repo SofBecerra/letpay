@@ -1,7 +1,11 @@
-<h1>Vista 3 Link evento http://www.localhost:3000/events/6/link</h1>
+<% content_for :body_class, 'details' %>
+<% content_for :header_class, 'details' %>
+<% content_for :header_title, 'LetPay!' %>
+<% content_for :header_subtitle, 'The best way' %>
 
-<%= @event.link %>
-<%= image_tag @event.qrcode %>
-
-
-<%= link_to 'Continuar',bill_path(@event.bill), class: "btn btn-secondary w-100 mt-3" %>
+<div class="container-custom">
+  <h1>Vista 3 Link evento</h1>
+  <p><%= @event.link %></p>
+  <%= image_tag @event.qrcode %>
+  <%= link_to 'Continuar', bill_path(@event.bill), class: "btn btn-custom btn-green w-100 mt-3" %>
+</div>

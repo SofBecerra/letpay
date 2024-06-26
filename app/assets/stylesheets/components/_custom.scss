@@ -20,6 +20,28 @@
   color: #ffffff;
 }
 
+.btn-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a4c639; /* Verde */
+  color: #ffffff; /* Blanco */
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.btn-circle-yellow {
+  background-color: #f8b400; /* Amarillo */
+}
+
 .btn-green {
   background-color: #a4c639;
   color: #ffffff;

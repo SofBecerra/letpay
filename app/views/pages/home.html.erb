@@ -1,3 +1,17 @@
-<h1>Vista 1 Home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to 'Empezar', new_event_path , class: "btn btn-secondary w-100 mt-3" %>
+<% content_for :body_class, 'welcome' %>
+<% content_for :header_class, 'welcome' %>
+<% content_for :header_title, 'LetPay!' %>
+<% content_for :header_subtitle, 'The best way' %>
+
+<div class="container-custom">
+
+  <!-- Sección media con el texto de bienvenida -->
+  <div class="section-middle text-center my-5">
+    <h3>Te damos la bienvenida a la mejor forma de dividir las cuentas</h3>
+  </div>
+
+  <!-- Sección inferior con el botón -->
+  <div class="section-bottom text-center">
+    <%= link_to 'Empezar', new_event_path, class: "btn btn-custom btn-yellow w-100 mt-3 rounded" %>
+  </div>
+</div>
