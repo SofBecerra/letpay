@@ -46,7 +46,21 @@
 }
 
 .btn-circle-yellow {
-  background-color: #f8b400; /* Amarillo */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff41c; /* Amarillo */
+  color: #ffffff; /* Blanco */
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .btn-fab {
@@ -69,20 +83,50 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
+  height: 100vh;
   max-width: 400px;
   margin-top: 20px;
-
-  h2 {
-    color: #000000;
-    margin-bottom: 20px;
-  }
-
-  p {
-    color: #696969;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+h2 {
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #696969;
+  margin-bottom: 20px;
+}
+
+.container-custom2 {
+  background: #27b806;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  max-width: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2, h4 {
+  color: #ffffffff;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #ffffffff;
+  margin-bottom: 20px;
+}
 .image-container {
   display: flex;
   justify-content: center;
@@ -249,4 +293,10 @@ header.details {
     text-decoration: none;
     cursor: pointer;
   }
+}
+
+.logo2-image {
+  width: 70%; /* Reduce el tamaño al 50% del original */
+  max-width: 100%; /* Asegura que no exceda el tamaño del contenedor */
+  height: auto; /* Mantiene la proporción */
 }
