@@ -1,0 +1,56 @@
+// Archivo creado por Coper
+
+.container-custom3 {
+  background: rgba(246, 246, 246, 0.977);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  max-width: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2, h4 {
+  color: rgb(149, 147, 147);
+  margin-bottom: 20px;
+}
+
+p {
+  color: #ffffffff;
+  margin-bottom: 20px;
+}
+
+.linea-verde {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  background-color: #13ab13; /* Color verde */
+  z-index: 9999; /* Asegura que esté en la parte superior */
+}
+
+.btn-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a4c639; /* Verde */
+  color: #ffffff; /* Blanco */
+  border: 15px solid #ffffff; /* Borde blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-circle:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
