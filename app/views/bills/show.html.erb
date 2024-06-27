@@ -1,39 +1,27 @@
-<h1>show   Vista 4 aqui va la cuenta y los botones y los usuarios http://www.localhost:3000/bills/1</h1>
-<p>Find me in app/views/bills/show.html.erb</p>
-<p>Poner abajo el diplay de los items</p>
+<div class="container-custom3">
+  <h1>show | Vista 4</h1>
+  <p>Find me in app/views/bills/show.html.erb</p>
+  <p>Poner abajo el display de los items</p>
 
-      <% @bill.items.each do |item| %>
-        <div class="d-flex justify-content-between mt-3">
-          <p>
-            <strong><%= item.user.nickname %></strong>
-            <strong><%= item.category %></strong>
-            <strong> $ <%= item.price %></strong>
-          </p>
-        </div>
-      <% end %>
+  <% @bill.items.each do |item| %>
+    <div class="d-flex justify-content-between mt-3">
+      <p>
+        <strong><%= item.user.email %></strong>
+        <strong><%= item.category %></strong>
+        <strong>$ <%= item.price %></strong>
+      </p>
+    </div>
+  <% end %>
 
-<p>Aqui van agregar los items</p>
+  <p>Aqui van agregar los items</p>
 
-<%= simple_form_for ([@bill, @item]) do |f| %>
-<%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes Otros]) %>
-<%= f.input :price %>
-<%= f.submit %>
-<% end %>
+  <%= simple_form_for ([@bill, @item]) do |f| %>
+    <%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes Otros]), {}, { class: 'form-control' } %>
+    <%= f.input :price, input_html: { class: 'form-control' } %>
+    <%= f.submit 'Añadir', class: 'btn btn-custom btn-green w-100 mt-3' %>
+  <% end %>
 
-<h3>Aca las cuentas totales </h3>
-<p>Total de la cuenta: <%= number_to_currency(@bill.total_amount) %></p>
-<p>Monto total de los Items: <%= number_to_currency(@bill.sum_items) %></p>
-<p>Monto pendiente de asignar: <%= number_to_currency(@bill.remaining_amount) %></p>
-
-<h3>Aca las cuentas por participante: </h3>
-<p>Numero de usuarios: <%= @bill.participants_count %></p>
-<table>
-    <% @bill.consumption_by_user.each do |user, amount| %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= number_to_currency(amount) %></td>
-      </tr>
-    <% end %>
-</table>
-
-
+</div>
+<div class="linea-verde">
+<button type="button" class="btn-circle">botón</button>
+</div>
