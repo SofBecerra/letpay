@@ -2,7 +2,8 @@ class Event < ApplicationRecord
   belongs_to :user
   has_one :bill
   has_one_attached :qrcode
-  has_many :users
+  has_many :items, through: :bill
+  has_many :participants, through: :items, source: :user
 
   after_create :generate_bill_and_link
 

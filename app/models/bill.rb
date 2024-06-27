@@ -1,7 +1,7 @@
 class Bill < ApplicationRecord
   belongs_to :event
   has_many :items
-  has_many: users, through: :items
+  has_many :users, through: :items
 
   def sum_items
     items.sum(:price)
@@ -21,8 +21,7 @@ class Bill < ApplicationRecord
   end
 
   def total_peruser
-    return 0 if event.users.count == 0
-    total_amount / event.users.count
+    return 0 if participants_count == 0
+    total_amount.to_f / participants_count
   end
-end
 end
