@@ -1,1 +1,8 @@
 <h1>Vista   todos los usarios  </h1>
+<div id="participants">
+  <% @participants.each do |participant| %>
+  <li style="color: black;"><%= participant.nickname %></li>
+
+
+  <% end %>
+</div>
