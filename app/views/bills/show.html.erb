@@ -16,7 +16,7 @@
 
   <h2>Items</h2>
   <% @bill.items.each do |item| %>
-    <div class="d-flex justify-content-between mt-3">
+    <div class="item-display d-flex justify-content-between mt-3">
       <p>
         <strong><%= item.user.nickname %></strong>
         <strong><%= item.category %></strong>

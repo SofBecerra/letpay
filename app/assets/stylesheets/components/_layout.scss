@@ -1,0 +1,163 @@
+.custom-layout {
+  // Estilos generales para todo el layout
+}
+
+.container-custom3 {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .item-display {
+    background-color: #e6f4e6;
+    padding: 10px;
+    border-radius: 5px;
+
+    strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    .form-control {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  }
+
+  .btn-custom {
+    background-color: #8cbf69;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #7aad5e;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 95%;
+    margin-bottom: 80px; // Espacio para el footer fijo
+  }
+}
+
+.linea-verde {
+  margin: 0 auto;
+  padding: 1px;
+  position: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #8cbf69;
+  box-sizing: border-box;
+
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+
+    .icon-button {
+      text-align: center;
+      color: white;
+      text-decoration: none;
+
+      i {
+        font-size: 25px;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+    }
+
+    .btn-circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #a4c639;
+      color: #f9f9f9;
+      border: 5px solid #f9f9f9;
+      transition: all 0.3s ease;
+      transform: translateY(-65%);
+
+      &:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      i {
+        font-size: 70px;
+        vertical-align: -0.18em;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .button-container {
+      flex-wrap: wrap;
+      gap: 15px;
+
+      .icon-button {
+        flex: 1 0 30%;
+        min-width: 70px;
+
+        i {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      .btn-circle {
+        width: 50px;
+        height: 50px;
+        transform: translateY(-25%);
+
+        i {
+          font-size: 24px;
+          font-weight: bold;
+          vertical-align: -0.18em;
+        }
+      }
+    }
+  }
+}
