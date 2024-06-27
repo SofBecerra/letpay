@@ -4,11 +4,11 @@
 
 .container-custom3 {
   padding: 20px;
-  background-color: #f9f9f9; // Color de fondo claro
+  background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 90%;
-  margin: 0 auto; // Centra el contenedor
+  margin: 0 auto;
 
   h1 {
     font-size: 24px;
@@ -43,67 +43,120 @@
   }
 
   .btn-custom {
-    background-color: #8cbf69; // Color del botón
-    color: #ffffff; // Color del texto del botón
+    background-color: #8cbf69;
+    color: #ffffff;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
 
     &:hover {
-      background-color: #7aad5e; // Color del botón al pasar el ratón
+      background-color: #7aad5e;
     }
+  }
+
+  @media (max-width: 768px) {
+    width: 95%;
+    margin-bottom: 80px; // Espacio para el footer fijo
   }
 }
 
 .linea-verde {
-  position: fixed;
+  margin: 0 auto;
+  padding: 1px;
+  position: center;
   bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: #8cbf69; // Color verde
-  padding: 10px 0;
-  z-index: 1000; // Para asegurarse de que esté por encima de otros elementos
+  background-color: #8cbf69;
+  box-sizing: border-box;
 
-  .btn-circle {
-    width: 90px; // Tamaño más grande
-    height: 90px; // Tamaño más grande
-    border-radius: 50%;
+  .button-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #a4c639; // Verde
-    color: #ffffff; // Blanco
-    border: 40px solid #ffffff; // Borde blanco más grande
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: none;
-    transform: translateY(-50%); // Sobresale un 30% por fuera de la línea verde
+    justify-content: center;
+    gap: 45px;
 
-    &:hover {
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    .icon-button {
+      text-align: center;
+      color: white;
+      text-decoration: none;
+
+      i {
+        font-size: 25px;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 14px;
+      }
     }
 
-    i {
-      font-size: 32px; // Aumentar el tamaño del icono
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .container-custom3 {
-    width: 95%;
-  }
-
-  .linea-verde {
     .btn-circle {
       width: 70px;
       height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #a4c639;
+      color: #f9f9f9;
+      border: 5px solid #f9f9f9;
+      transition: all 0.3s ease;
+      transform: translateY(-65%);
+
+      &:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+
       i {
-        font-size: 28px;
+        font-size: 70px;
+        vertical-align: -0.18em;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .button-container {
+      flex-wrap: wrap;
+      gap: 15px;
+
+      .icon-button {
+        flex: 1 0 30%;
+        min-width: 70px;
+
+        i {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      .btn-circle {
+        width: 50px;
+        height: 50px;
+        transform: translateY(-25%);
+
+        i {
+          font-size: 24px;
+          font-weight: bold;
+          vertical-align: -0.18em;
+        }
       }
     }
   }
