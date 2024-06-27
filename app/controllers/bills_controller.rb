@@ -12,6 +12,11 @@ class BillsController < ApplicationController
     @bill = Bill.find(params[:id])
   end
 
+  def update
+    @bill = Bill.find(params[:id])
+    @bill.update(bill_params)
+  end
+
   def participants
     @items = Item.all
     @bill = Bill.find(params[:id])
@@ -34,6 +39,7 @@ class BillsController < ApplicationController
     @items = @bill.items
   end
 
+
   def layout
     @items = Item.all
     @bill = Bill.find(params[:id])
@@ -44,7 +50,7 @@ class BillsController < ApplicationController
 
   private
 
-  def bil_params
+  def bill_params
     params.require(:bill).permit(:total_amount, :total_items, :total_peruser)
   end
 end
