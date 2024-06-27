@@ -12,12 +12,14 @@ class BillsController < ApplicationController
     @bill = Bill.find(params[:id])
   end
 
-  def participants
-    @items = Item.all
+  def update
     @bill = Bill.find(params[:id])
-    @event = @bill.event
-    @item = Item.new
-    @items = @bill.items
+    @bill.update(bill_params)
+  end
+
+  def participants
+    @bill = Bill.find(params[:id])
+    @participants = @bill.users.distinct.select(:id, :nickname)
   end
 
   def calculate
@@ -34,6 +36,7 @@ class BillsController < ApplicationController
     @items = @bill.items
   end
 
+
   def layout
     @items = Item.all
     @bill = Bill.find(params[:id])
@@ -44,7 +47,7 @@ class BillsController < ApplicationController
 
   private
 
-  def bil_params
+  def bill_params
     params.require(:bill).permit(:total_amount, :total_items, :total_peruser)
   end
 end

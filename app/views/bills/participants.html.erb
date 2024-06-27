@@ -1,1 +1,12 @@
-<h1>Vista   todos los usarios  </h1>
+<h1>Participantes </h1>
+<div class="container-custom3" style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <div id="participants" style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <% @participants.each do |participant| %>
+      <div class="card" style="width: 200px; margin: 10px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; display: flex; justify-content: center; align-items: center; text-align: center; height: 20px;">
+        <li class="d-flex justify-content-center align-items-center" style="list-style-type: none;">
+          <%= participant.nickname %>
+        </li>
+      </div>
+    <% end %>
+  </div>
+</div>

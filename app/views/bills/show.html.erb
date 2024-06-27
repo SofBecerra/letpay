@@ -2,21 +2,35 @@
   <h1>show | Vista 4</h1>
   <p>Find me in app/views/bills/show.html.erb</p>
   <p>Poner abajo el display de los items</p>
+  <div class="container-custom3">
+  <h1>Cuenta</h1>
 
+  <%= simple_form_for @bill do |f| %>
+    <div class="mb-3">
+      <h5><%= f.input :total_amount, label: "Total Amount", placeholder: '🧾 Monto de la cuenta' %></h5>
+    </div>
+    <div class="d-grid">
+      <%= f.submit 'Update', class: 'btn btn-custom btn-yellow' %>
+    </div>
+  <% end %>
+
+  <h2>Items</h2>
   <% @bill.items.each do |item| %>
     <div class="item-display d-flex justify-content-between mt-3">
       <p>
         <strong><%= item.user.nickname %></strong>
         <strong><%= item.category %></strong>
-        <strong>$ <%= item.price %></strong>
+        <strong>$ <%= number_to_currency(item.price) %></strong>
       </p>
     </div>
   <% end %>
 
-</div>
+  <div class="linea-verde">
+    <button type="button" class="btn-circle">botón</button>
+  </div>
 
-<div class="linea-verde">
-  <button type="button" class="btn-circle">
-    <i class="bi bi-check"></i>
-  </button>
+  <%= link_to "Participantes", participants_bill_path(@bill), class: "btn btn-primary" %>
+  <%= link_to "Calcular Cuenta", calculate_bill_path(@bill), class: "btn btn-success" %>
+  <%= link_to "Items", items_bill_path(@bill), class: "btn btn-primary" %>
+  <%= link_to "Layout", layout_bill_path(@bill), class: "btn btn-success" %>
 </div>

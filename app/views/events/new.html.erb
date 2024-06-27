@@ -6,8 +6,6 @@
   <%= simple_form_for @event do |f| %>
     <div class="mb-3">
       <h5> <%= f.input :name, placeholder: '🍽 Nombre del evento' %></h5>
-      <h5> <%= f.input :name, placeholder: '👤 Escribe tu nombre' %></h5>
-      <h5> <%= f.input :name, placeholder: '🧾 Monto de la cuenta' %></h5>
     </div>
     <div class="d-grid">
       <%= f.submit 'Submit', class: 'btn btn-custom btn-yellow' %>

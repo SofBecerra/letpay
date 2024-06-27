@@ -7,6 +7,8 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @bill = Event.new
+    @bill.save
   end
 
   def create
@@ -30,7 +32,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :link)
+    params.require(:event).permit(:name, :link, :user, :total_amount)
   end
 
 end
