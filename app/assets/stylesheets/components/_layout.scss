@@ -1,0 +1,110 @@
+.custom-layout {
+  // Estilos generales para todo el layout
+}
+
+.container-custom3 {
+  padding: 20px;
+  background-color: #f9f9f9; // Color de fondo claro
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 0 auto; // Centra el contenedor
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .item-display {
+    background-color: #e6f4e6;
+    padding: 10px;
+    border-radius: 5px;
+
+    strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    .form-control {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  }
+
+  .btn-custom {
+    background-color: #8cbf69; // Color del botón
+    color: #ffffff; // Color del texto del botón
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #7aad5e; // Color del botón al pasar el ratón
+    }
+  }
+}
+
+.linea-verde {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8cbf69; // Color verde
+  padding: 10px 0;
+  z-index: 1000; // Para asegurarse de que esté por encima de otros elementos
+
+  .btn-circle {
+    width: 90px; // Tamaño más grande
+    height: 90px; // Tamaño más grande
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a4c639; // Verde
+    color: #ffffff; // Blanco
+    border: 40px solid #ffffff; // Borde blanco más grande
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+    transform: translateY(-50%); // Sobresale un 30% por fuera de la línea verde
+
+    &:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    i {
+      font-size: 32px; // Aumentar el tamaño del icono
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container-custom3 {
+    width: 95%;
+  }
+
+  .linea-verde {
+    .btn-circle {
+      width: 70px;
+      height: 70px;
+      i {
+        font-size: 28px;
+      }
+    }
+  }
+}
