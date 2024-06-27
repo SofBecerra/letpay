@@ -1,1 +1,15 @@
-<h1>Vista  calculo de todos los usarios  </h1>
+<h1>Estado de cuenta </h1>
+<p>Total de la cuenta: <%= number_to_currency(@bill.total_amount) %></p>
+<p>Monto total de los Items: <%= number_to_currency(@bill.sum_items) %></p>
+<p>Monto pendiente de asignar: <%= number_to_currency(@bill.remaining_amount) %></p>
+
+<h3>Aca las cuentas por participante: </h3>
+<p>Numero de usuarios: <%= @bill.participants_count %></p>
+<table>
+    <% @bill.consumption_by_user.each do |user, amount| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= number_to_currency(amount) %></td>
+      </tr>
+    <% end %>
+</table>
