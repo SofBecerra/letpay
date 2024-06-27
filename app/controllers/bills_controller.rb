@@ -13,11 +13,8 @@ class BillsController < ApplicationController
   end
 
   def participants
-    @items = Item.all
     @bill = Bill.find(params[:id])
-    @event = @bill.event
-    @item = Item.new
-    @items = @bill.items
+    @participants = @bill.users.distinct.select(:id, :nickname)
   end
 
   def calculate
