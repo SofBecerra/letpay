@@ -7,6 +7,8 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @bill = Event.new
+    @bill.save
   end
 
   def create
