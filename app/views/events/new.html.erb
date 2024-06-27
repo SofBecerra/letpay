@@ -1,8 +1,14 @@
-<h1>Vista 2 | Estas en new_event| http://localhost:3000/events/new</h1>
-<h2>nombre del evento</h2>
-<p>Find me in app/views/events/new.html.erb</p>
+<div class="container-custom mb-3">
+  <h2 class="text-center">Vista 2 | Estás en new_event | http://localhost:3000/events/new</h2>
+  <h4 class="text-center">Nombre del evento</h4>
+  <p class="text-center">Find me in app/views/events/new.html.erb</p>
 
-<%= simple_form_for @event do |f| %>
-<%= f.input :name %>
-<%= f.submit %>
-<% end %>
+  <%= simple_form_for @event do |f| %>
+    <div class="mb-3">
+      <%= f.input :name, input_html: { class: 'form-control-custom' } %>
+    </div>
+    <div class="d-grid">
+      <%= f.submit 'Submit', class: 'btn btn-custom btn-green' %>
+    </div>
+  <% end %>
+</div>

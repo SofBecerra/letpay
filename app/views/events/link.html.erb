@@ -1,11 +1,8 @@
-<% content_for :body_class, 'details' %>
-<% content_for :header_class, 'details' %>
-<% content_for :header_title, 'LetPay!' %>
-<% content_for :header_subtitle, 'The best way' %>
-
 <div class="container-custom">
-  <h1>Vista 3 Link evento</h1>
+  <h2>Vista 3 Link evento</h2>
   <p><%= @event.link %></p>
-  <%= image_tag @event.qrcode %>
+  <div class="image-container">
+    <%= image_tag @event.qrcode, class: 'img-fluid' %>
+  </div>
   <%= link_to 'Continuar', bill_path(@event.bill), class: "btn btn-custom btn-green w-100 mt-3" %>
 </div>

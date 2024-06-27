@@ -1,21 +1,23 @@
-<h1>show   Vista 4 aqui va la cuenta y los botones y los usuarios http://www.localhost:3000/bills/1</h1>
-<p>Find me in app/views/bills/show.html.erb</p>
-<p>Poner abajo el diplay de los items</p>
+<div class="container-custom">
+  <h1>show | Vista 4</h1>
+  <p>Find me in app/views/bills/show.html.erb</p>
+  <p>Poner abajo el display de los items</p>
 
-      <% @bill.items.each do |item| %>
-        <div class="d-flex justify-content-between mt-3">
-          <p>
-            <strong><%= item.user.email %></strong>
-            <strong><%= item.category %></strong>
-            <strong> $ <%= item.price %></strong>
-          </p>
-        </div>
-      <% end %>
+  <% @bill.items.each do |item| %>
+    <div class="d-flex justify-content-between mt-3">
+      <p>
+        <strong><%= item.user.email %></strong>
+        <strong><%= item.category %></strong>
+        <strong>$ <%= item.price %></strong>
+      </p>
+    </div>
+  <% end %>
 
-<p>Aqui van agregar los items</p>
+  <p>Aqui van agregar los items</p>
 
-<%= simple_form_for ([@bill, @item]) do |f| %>
-<%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes Otros]) %>
-<%= f.input :price %>
-<%= f.submit %>
-<% end %>
+  <%= simple_form_for ([@bill, @item]) do |f| %>
+    <%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes Otros]), {}, { class: 'form-control' } %>
+    <%= f.input :price, input_html: { class: 'form-control' } %>
+    <%= f.submit 'Añadir', class: 'btn btn-custom btn-green w-100 mt-3' %>
+  <% end %>
+</div>

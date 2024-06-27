@@ -1,4 +1,6 @@
-// ARchivo creado por  Coper
+// Archivo creado por Coper
+
+// Botones
 .btn-custom {
   border: none;
   border-radius: 25px;
@@ -17,6 +19,11 @@
 
 .btn-yellow {
   background-color: #f8b400;
+  color: #ffffff;
+}
+
+.btn-green {
+  background-color: #a4c639;
   color: #ffffff;
 }
 
@@ -42,11 +49,6 @@
   background-color: #f8b400; /* Amarillo */
 }
 
-.btn-green {
-  background-color: #a4c639;
-  color: #ffffff;
-}
-
 .btn-fab {
   width: 56px;
   height: 56px;
@@ -59,6 +61,7 @@
   right: 20px;
 }
 
+// Contenedores
 .container-custom {
   background: #ffffff;
   border-radius: 15px;
@@ -80,6 +83,20 @@
   }
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+}
+
+// Formulario
 input {
   border: 1px solid #d3d3d3;
   border-radius: 25px;
@@ -95,6 +112,22 @@ input {
   }
 }
 
+.form-control {
+  border: 1px solid #d3d3d3;
+  border-radius: 25px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:focus {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    outline: none;
+  }
+}
+
+// Tarjetas
 .card {
   background: #ffffff;
   border-radius: 10px;
@@ -113,9 +146,10 @@ input {
   }
 }
 
+// Cuerpo
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #ffffff;
+  background-color: #0594241d;
   color: #000000;
   margin: 0;
   display: flex;
@@ -142,6 +176,7 @@ body.details {
   background-color: #ffffff;
 }
 
+// Cabecera
 header {
   text-align: center;
   padding: 20px;
@@ -177,6 +212,7 @@ header.details {
   }
 }
 
+// Modal
 .modal {
   display: none;
   position: fixed;
