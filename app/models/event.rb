@@ -2,11 +2,13 @@ class Event < ApplicationRecord
   belongs_to :user
   has_one :bill
   has_one_attached :qrcode
+  has_many :items, through: :bill
+  has_many :participants, through: :items, source: :user
 
   after_create :generate_bill_and_link
 
   def generate_bill_and_link
-    bill = Bill.create(event: Event.last)
+    bill = Bill.create(event: Event.last, total_amount: 0)
     link = "www.localhost:3000/bills/#{bill.id}"
     qr = RQRCode::QRCode.new(link)
     png = qr.as_png(

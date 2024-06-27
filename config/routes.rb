@@ -7,11 +7,20 @@ Rails.application.routes.draw do
   resources :events, only: [:new, :create] do
     resources :bills, only: [:create, :new]
   end
-  resources :bills, only: [:show] do
+  resources :bills, only: [:show, :edit] do
     resources :items, only: [:create, ]
   end
 
   resources :items, only: [:destroy, :update]
+
+  resources :bills do
+    member do
+      get :participants
+      get :calculate
+      get :items
+      get :layout
+    end
+  end
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
