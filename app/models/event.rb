@@ -12,7 +12,7 @@ class Event < ApplicationRecord
     # bill = Bill.create(event: Event.last, total_amount: 0)
     # #self.link = "www.localhost:3000/bills/#{bill.id}"
     event = Event.last
-    event.link = "www.localhost:3000/bills/#{bill.id}"
+    event.link = "https://letpay-6e5f9b6e77f8.herokuapp.com/bills/#{bill.id}"
     event.save
     #qr = RQRCode::QRCode.new(event.link)
 
