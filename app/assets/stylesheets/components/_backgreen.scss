@@ -16,9 +16,23 @@
   align-items: center;
 }
 
-.container-custom2 h2, h4 {
+.container-custom2 h1 {
+  font-size: 36px; /* Tamaño de fuente para el h1 */
+  font-weight: bold; /* Opcional: Ajustes de estilo */
+  margin-bottom: 10px; /* Opcional: Ajustes de estilo */
   color: #ffffffff;
-  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.container-custom2 h3 {
+  font-size: 22px; /* Tamaño de fuente para el h3 (igual que h1) */
+  font-weight: normal; /* Opcional: Ajustes de estilo */
+  margin-bottom: 90px; /* Opcional: Ajustes de estilo */
+  color: #ffffffff;
+}
+
+.container-custom2  h2, h4 {
+  color: #ffffffff;
 }
 
 p {
