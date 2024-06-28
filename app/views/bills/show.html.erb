@@ -11,6 +11,7 @@
       <%= f.submit 'Actualizar', class: 'btn btn-custom btn-yellow' %>
     </div>
   <% end %>
+      <% turbo_stream_from "items"%>
 
   <%= turbo_frame_tag "new_item" %>
   <%# turbo_frame_tag "items" do %>
