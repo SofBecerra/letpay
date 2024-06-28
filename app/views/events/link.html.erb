@@ -1,24 +1,20 @@
-<body class="fondogris">
- <div class= "row letpay">
-    <div class= "col-12 col-lg-8">
-      <h1>LetPay!</h1>
-    </div>
-    <div class= "col-12 col-lg-8">
-      <h3>The best wey</h3>
-    </div>
-  </div>
-  <div class="container-custom-link">
-    <h2>¡Comparte tu evento!</h2>
-    <h4>Cada miembro podra verificar </h4>
-    <h4>y agregar sus platos</h4>
-    <div >
+
+  <div class="container-custom222 ">
+
+    <div class= "row mb-5">
+      <div class="text-center ">
+         <%= image_tag "Logo2.png", alt: "Logo2", class: "logo2-image" %>
+      </div>
+     </div>
+
+
+    <h2 class = " text-black " >¡Comparte tu evento!</h2>
+    <h4 class =" text-black mb-1" >Cada miembro podra verificar </h4>
+    <h4 class =" text-black">y agregar sus platos</h4>
+    <div class = "container mt-5 mb-5">
            <%= @svg.html_safe %>
-      <%# image_tag @event.qrcode, class: 'img-fluid' %>
     </div>
-    <h4>O envia el siguiente enlace: </h4>
-    <%# <p><%= @event.link %></p> %>
-
+    <h4 class =" text-black mb-1">O envia el siguiente enlace: </h4>
+    <h5 class =" text-black"><%= @event.link %></h5>
+      <%= link_to 'Continuar', bill_path(@event.bill), class: "btn btn-custom btn-green w-100 mt-5" %>
   </div>
-
-  <%= link_to 'Continuar', bill_path(@event.bill), class: "btn btn-custom btn-green w-100 mt-3" %>
-</body>
