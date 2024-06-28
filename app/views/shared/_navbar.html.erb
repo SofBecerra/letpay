@@ -13,10 +13,8 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to "QR", "#", class: "dropdown-item" %>
-                <%= link_to "Cuenta acumulada", "#", class: "dropdown-item" %>
-                <%= link_to "Nuevo evento", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+               
               </div>
             </li>
           <% else %>
