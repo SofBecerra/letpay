@@ -15,7 +15,9 @@
   <%= turbo_frame_tag "new_item" %>
   <%# turbo_frame_tag "items" do %>
     <% @bill.items.each do |item| %>
-      <%= render "bills/item", item: item %>
+      <%= turbo_frame_tag "items" do %>
+        <%= render "items/item", item: item %>
+      <% end %>
     <% end %>
   <%# end %>
 <div class="footer-wrapper">
