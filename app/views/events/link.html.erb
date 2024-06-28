@@ -7,16 +7,17 @@
       <h3>The best wey</h3>
     </div>
   </div>
-
   <div class="container-custom-link">
     <h2>¡Comparte tu evento!</h2>
     <h4>Cada miembro podra verificar </h4>
     <h4>y agregar sus platos</h4>
-    <div class="image-container-link">
-      <%= image_tag @event.qrcode, class: 'img-fluid' %>
+    <div >
+           <%= @svg.html_safe %>
+      <%# image_tag @event.qrcode, class: 'img-fluid' %>
     </div>
     <h4>O envia el siguiente enlace: </h4>
-    <p><%= @event.link %></p>
+    <%# <p><%= @event.link %></p> %>
+
   </div>
 
   <%= link_to 'Continuar', bill_path(@event.bill), class: "btn btn-custom btn-green w-100 mt-3" %>

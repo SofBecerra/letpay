@@ -27,6 +27,13 @@ class EventsController < ApplicationController
 
   def link
     @event = Event.find(params[:event_id])
+    @qr = RQRCode::QRCode.new(@event.link)
+    @svg = @qr.as_svg(
+      offset: 0,
+      color: "000",
+      shape_rendering: 'crispEdges',
+      standanalone: true
+      )
   end
 
   private
