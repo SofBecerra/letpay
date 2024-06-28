@@ -5,7 +5,10 @@ class ItemsController < ApplicationController
     @item = @bill.items.new(item_params)
     @item.user = current_user
     if @item.save!
-      redirect_to bill_path(@bill)
+      respond_to do |format|
+        format.html {redirect_to bill_path(@bill)}
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
