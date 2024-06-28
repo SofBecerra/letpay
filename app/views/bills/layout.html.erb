@@ -1,57 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>MyApp</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetPay Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 <body>
-  <div class="container-custom3">
-    <h1>show | Vista 4</h1>
-    <p>Find me in app/views/bills/show.html.erb</p>
-    <p>Poner abajo el display de los items</p>
-
-    <% @bill.items.each do |item| %>
-      <div class="item-display d-flex justify-content-between mt-3">
-        <p>
-          <strong><%= item.user.email %></strong>
-          <strong><%= item.category %></strong>
-          <strong>$ <%= item.price %></strong>
-        </p>
-      </div>
-    <% end %>
-
-    <p>Aqui van agregar los items</p>
-
-    <%= simple_form_for ([@bill, @item]) do |f| %>
-      <div class="form-group">
-        <%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes Otros]), {}, { class: 'form-control' } %>
-      </div>
-      <div class="form-group">
-        <%= f.input :price, input_html: { class: 'form-control' } %>
-      </div>
-      <%= f.submit 'Añadir', class: 'btn btn-custom btn-green w-100 mt-3' %>
-    <% end %>
-  </div>
-
-  <div class="linea-verde">
-  <div class="button-container">
-    <%= link_to participants_bill_path(@bill), class: "icon-button" do %>
-      <i class="bi bi-person"></i>
-      <p>El parche</p>
-    <% end %>
-    <%= link_to items_bill_path(@bill), class: "btn-circle" do %>
-      <i class="bi bi-check"></i>
-    <% end %>
-    <%= link_to calculate_bill_path(@bill), class: "icon-button" do %>
-      <i class="bi bi-receipt"></i>
-      <p>La cuenta</p>
-    <% end %>
-  </div>
-</div>
-
+    <div class="custom-layout">
+        <div class="container-custom3">
+            <h1>show | Vista 4</h1>
+            
+            <form class="add-item-form">
+                <div class="form-group">
+                    <select class="form-control">
+                        <option>Postres</option>
+                        <option>Bebidas</option>
+                        <option>Entradas</option>
+                        <option>Platos fuertes</option>
+                        <option>Otros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Price">
+                </div>
+                <button type="submit" class="btn btn-custom btn-green w-100">Añadir</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-wrapper">
+        <div class="button-container">
+            <a href="#" class="icon-button">
+                <i class="bi bi-person"></i>
+                <p>Participantes</p>
+            </a>
+            <a href="#" class="btn-circle">
+                <i class="bi bi-check"></i>
+            </a>
+            <a href="#" class="icon-button">
+                <i class="bi bi-receipt"></i>
+                <p>La cuenta</p>
+            </a>
+        </div>
+    </div>
 </body>
 </html>

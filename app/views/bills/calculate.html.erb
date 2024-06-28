@@ -1,15 +1,56 @@
-<h1>Estado de la cuenta </h1>
-<p>Total de la cuenta: <%= number_to_currency(@bill.total_amount) %></p>
-<p>Monto total de los Items: <%= number_to_currency(@bill.sum_items) %></p>
-<p>Monto pendiente de asignar: <%= number_to_currency(@bill.remaining_amount) %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetPay - Calcular</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="custom-layout">
+        <div class="container-custom3">
+            <h1>Calcular</h1>
+            
+            <div class="calculation-result">
+                <h4>¡El cálculo está listo!</h4>
+                
+                <div class="result-box">
+                    <h5>Cada uno debe pagar:</h5>
+                    
+                    <% @bill.consumption_by_user.each do |user, amount| %>
+                        <div class="user-amount">
+                            <strong><%= user.nickname %></strong>
+                            <strong>$<%= number_to_currency(amount, unit: '') %></strong>
+                        </div>
+                    <% end %>
+                    <h5>Falta asignar:</h5>
+                        <div class="remaining-amount">
+                            <%= number_to_currency(@bill.remaining_amount) %>
+                        </div>
 
-<h3>Cuentas por participante: </h3>
-<p>Numero de usuarios: <%= @bill.participants_count %></p>
-<table>
-    <% @bill.consumption_by_user.each do |user, amount| %>
-      <tr>
-        <td><%= user.nickname %></td>
-        <td><%= number_to_currency(amount) %></td>
-      </tr>
-    <% end %>
-</table>
+                    <button class="btn btn-custom btn-green w-100">Compartir</button>
+                </div>
+                
+                <%= link_to "Nuevo", root_path, class: "btn btn-custom btn-warning w-100" %>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-wrapper">
+        <div class="button-container">
+            <%= link_to participants_bill_path(@bill), class: "icon-button" do %>
+                <i class="bi bi-person"></i>
+                <p>Participantes</p>
+            <% end %>
+            <%= link_to items_bill_path(@bill), class: "btn-circle" do %>
+                <i class="bi bi-plus"></i>
+            <% end %>
+            <%= link_to calculate_bill_path(@bill), class: "icon-button" do %>
+                <i class="bi bi-receipt"></i>
+                <p>La cuenta</p>
+            <% end %>
+        </div>
+    </div>
+</body>
+</html>
