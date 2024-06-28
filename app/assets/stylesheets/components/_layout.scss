@@ -16,7 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 80px; 
+  padding-bottom: 80px;
 }
 
 .container-custom3 {
@@ -26,7 +26,11 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+
 
 h1 {
   font-size: 24px;
