@@ -32,6 +32,7 @@ class EventsController < ApplicationController
       offset: 0,
       color: "000",
       shape_rendering: 'crispEdges',
+      module_size: 7,
       standanalone: true
       )
   end
