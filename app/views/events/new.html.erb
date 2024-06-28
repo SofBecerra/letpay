@@ -1,27 +1,19 @@
-
-<div class="container-custom2 ">
+<div class="container-custom222 ">
 
   <div class= "row">
-    <div class= "col-12 col-lg-8">
-      <h1>LetPay!</h1>
-    </div>
-    <div class= "col-12 col-lg-8">
-      <h3>The best wey</h3>
-    </div>
+  <div class="text-center my-3">
+    <%= image_tag "Logo2.png", alt: "Logo2", class: "logo2-image" %>
   </div>
-
-
-
+  </div>
 
 
   <%= simple_form_for @event do |f| %>
     <div class="mb-3">
-      <h5 class="text-white"> <%= f.input :name,  label:"¿Cual es tu evento?",  placeholder: '🍽 Nombre del evento' %></h5>
+      <h5 class="text-black"> <%= f.input :name,  label:"¿Cual es tu evento?",  placeholder: '🍽 Nombre del evento' %></h5>
     </div>
     <div class="d-grid">
       <%= f.submit 'Crear', class: 'btn btn-custom btn-yellow' %>
     </div>
   <% end %>
 
-      <h6 class="text-center">Vista 2 | Estás en new_event | http://localhost:3000/events/new</h6>
 </div>
