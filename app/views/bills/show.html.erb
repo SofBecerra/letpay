@@ -12,24 +12,19 @@
     </div>
   <% end %>
 
-  
-  <% @bill.items.each do |item| %>
-    <div class="item-display d-flex justify-content-between mt-3">
-      <p>
-        <strong><%= item.user.nickname %></strong>
-        <strong><%= item.category %></strong>
-        <strong>$ <%= number_to_currency(item.price) %></strong>
-      </p>
-    </div>
-  <% end %>
-
+  <%= turbo_frame_tag "new_item" %>
+  <%# turbo_frame_tag "items" do %>
+    <% @bill.items.each do |item| %>
+      <%= render "bills/item", item: item %>
+    <% end %>
+  <%# end %>
 <div class="footer-wrapper">
         <div class="button-container">
             <%= link_to participants_bill_path(@bill), class: "icon-button" do %>
                 <i class="bi bi-person"></i>
                 <p>Participantes</p>
             <% end %>
-            <%= link_to items_bill_path(@bill), class: "btn-circle" do %>
+            <%= link_to items_bill_path(@bill), class: "btn-circle", data:{turbo_frame: "new_item"} do %>
                 <i class="bi bi-plus"></i>
             <% end %>
             <%= link_to calculate_bill_path(@bill), class: "icon-button" do %>

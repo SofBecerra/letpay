@@ -9,22 +9,19 @@
 </head>
 <body>
     <div class="custom-layout">
-        <div class="container-custom3">            
+        <div class="container-custom3">
             <div class = "items" >
  <div class = "mb-5 mt-4" style="display: flex; align-items: center;">
   <i class="bi bi-arrow-left-circle-fill" style="font-size: 24px; margin-right: 10px;"></i>
   <h4 style="margin: 0;">Añadir un platillo</h4>
  </div>
-  <%= simple_form_for ([@bill, @item]) do |f| %>
-      <%= "Categoria de comida" %>
-    <%= f.select :category, options_for_select(%w[Postres Bebidas Entradas Platosfuertes Otros]), {}, { class: 'form-control rounded-2', style: "background-color: #E2FBD8;" } %>
-    <%= f.input :price, placeholder: '$ Precio', input_html: { class: 'form-control rounded-2', style: "background-color: #E2FBD8;"  } %>
-    <%= f.submit 'Añadir', class: 'btn btn-custom btn-dark w-100 mt-3' %>
+  <%= turbo_frame_tag "new_item" do %>
+    <%= render "bills/form_item" %>
   <% end %>
 </div>
         </div>
     </div>
-    
+
     <div class="footer-wrapper">
         <div class="button-container">
             <a href="#" class="icon-button">
