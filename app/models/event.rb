@@ -9,26 +9,31 @@ class Event < ApplicationRecord
 
   def generate_bill_and_link
     bill = Bill.create(event: Event.last, total_amount: 0)
-    self.link = "www.localhost:3000/bills/#{bill.id}"
-    qr = RQRCode::QRCode.new(self.link)
-    png = qr.as_png(
-      bit_depth: 1,
-      border_modules: 4,
-      color_mode: ChunkyPNG::COLOR_GRAYSCALE,
-      color: "black",
-      file: nil,
-      fill: "white",
-      module_px_size: 6,
-      resize_exactly_to: false,
-      resize_gte_to: false,
-      size: 500
-      )
+    # bill = Bill.create(event: Event.last, total_amount: 0)
+    # #self.link = "www.localhost:3000/bills/#{bill.id}"
+    event = Event.last
+    event.link = "www.localhost:3000/bills/#{bill.id}"
+    event.save
+    #qr = RQRCode::QRCode.new(event.link)
 
-    qrcode.attach(
-      io: StringIO.new(png.to_s),
-      filename: "qrcode.png",
-      content_type: "image/png"
-    )
+    # png = qr.as_png(
+    #   bit_depth: 1,
+    #   border_modules: 4,
+    #   color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+    #   color: "black",
+    #   file: nil,
+    #   fill: "white",
+    #   module_px_size: 6,
+    #   resize_exactly_to: false,
+    #   resize_gte_to: false,
+    #   size: 500
+    #   )
+
+    # qrcode.attach(
+    #   io: StringIO.new(png.to_s),
+    #   filename: "qrcode.png",
+    #   content_type: "image/png"
+    # )
 
     save
   end
