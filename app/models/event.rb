@@ -9,8 +9,8 @@ class Event < ApplicationRecord
 
   def generate_bill_and_link
     bill = Bill.create(event: Event.last, total_amount: 0)
-    link = "www.localhost:3000/bills/#{bill.id}"
-    qr = RQRCode::QRCode.new(link)
+    self.link = "www.localhost:3000/bills/#{bill.id}"
+    qr = RQRCode::QRCode.new(self.link)
     png = qr.as_png(
       bit_depth: 1,
       border_modules: 4,

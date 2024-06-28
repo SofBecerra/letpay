@@ -92,6 +92,64 @@
   align-items: center;
 }
 
+.container-custom-link {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  height: 70vh;
+  max-width: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container-link {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+}
+
+.container-custom-link h2 {
+  color: #000000;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.container-custom-link h4, p {
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.letpay h1 {
+  font-size: 36px; /* Tamaño de fuente para el h1 */
+  font-weight: bold; /* Opcional: Ajustes de estilo */
+  margin-bottom: 5px; /* Opcional: Ajustes de estilo */
+  color: rgb(0, 0, 0);
+  margin-top: 20px;
+}
+
+.letpay h3 {
+  font-size: 22px; /* Tamaño de fuente para el h3 (igual que h1) */
+  font-weight: normal; /* Opcional: Ajustes de estilo */
+  margin-bottom: 20px; /* Opcional: Ajustes de estilo */
+  color: rgb(0, 0, 0);
+}
+
 h2 {
   color: #000000;
   margin-bottom: 20px;
@@ -103,10 +161,9 @@ p {
 }
 
 .container-custom2 {
-  background: #27b806;
+  background: #65B741;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
   height: 100vh;
@@ -128,6 +185,8 @@ p {
   margin-bottom: 20px;
 }
 .image-container {
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,6 +265,14 @@ body {
   body {
     padding: 10px;
   }
+}
+
+.fondogris {
+  background-color: #e6e6e6;
+}
+
+.fondoverde {
+  background-color: #65B741;
 }
 
 body.welcome {
