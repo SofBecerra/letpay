@@ -11,16 +11,13 @@
       <%= f.submit 'Actualizar', class: 'btn btn-custom btn-yellow' %>
     </div>
   <% end %>
-      <% turbo_stream_from "items"%>
-
-  <%= turbo_frame_tag "new_item" %>
-  <%# turbo_frame_tag "items" do %>
-    <% @bill.items.each do |item| %>
-      <%= turbo_frame_tag "items" do %>
-        <%= render "items/item", item: item %>
-      <% end %>
+ <!--arqui va el turbo frame-->
+    <% turbo_stream_from "items"%> <!-- indica que vamos hacer turo stream -->
+    <%= turbo_frame_tag "new_item" %> <!--crea un contenedor -->
+      <%= turbo_frame_tag "items" do %> <!--llama el _items.html para mostrar cada item -->
+        <%= render partial: "items/item", collection: @bill.items, as: :item %>  <!-- se usa para que muestre aqui los items en esta pestaña y collecton le pasa los argumentso -->
     <% end %>
-  <%# end %>
+
 <div class="footer-wrapper">
         <div class="button-container">
             <%= link_to participants_bill_path(@bill), class: "icon-button" do %>
