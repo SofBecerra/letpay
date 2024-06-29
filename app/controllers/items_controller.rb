@@ -23,12 +23,14 @@ class ItemsController < ApplicationController
     @item.update(params[:item])
   end
 
+  #el codigo destroy es invocado desde el formulario en bills con el path
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
+    #Cuando creamos los turbo_frame_tag para usar Hotwire, ahora el usuario hara peticiones a traves de TURBO
     respond_to do |format|
-      format.html { redirect_to bill_path(@item.bill_id), status: :see_other, notice: "Item eliminado" }
-      format.turbo_stream
+      format.html { redirect_to bill_path(@item.bill_id), status: :see_other, notice: "Item eliminado" } # va a redirigir ya que elimino el item
+      format.turbo_stream  #esta linea manda a llamar al archivo destroy turbo del view
     end
   end
 
