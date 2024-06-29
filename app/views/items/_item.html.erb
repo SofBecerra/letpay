@@ -3,7 +3,8 @@
       <p class="text-black">
         <strong><%= item.user.nickname %></strong>
         <strong><%= item.category %></strong>
-        <strong>$ <%= number_to_currency(item.price) %></strong>
+        <strong><%= number_to_currency(item.price) %></strong>
+             <%= link_to '', item_path(item), method: :delete, data: { turbo_method: :delete, turbo_confirm: '¿Estás seguro?' }, class: "btn btn-primary bi bi-trash3" %>
       </p>
     </div>
 <% end %>

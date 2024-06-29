@@ -45,9 +45,20 @@ class BillsController < ApplicationController
     @items = @bill.items
   end
 
+  def destroy
+    @item = Item.find(params[:id])  # Encuentra la factura
+    @item.destroy
+    redirect_to bill_path, status: :see_other, notice: 'Item eliminado'
+  end
+
   private
 
   def bill_params
     params.require(:bill).permit(:total_amount, :total_items, :total_peruser)
   end
+
+  def item_params
+    params.require(:item).permit(:category, :price, :item_id)
+  end
+
 end

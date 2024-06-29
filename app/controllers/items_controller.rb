@@ -26,7 +26,10 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to bill_path, status: :see_other, notice: 'Item eliminado'
+    respond_to do |format|
+      format.html { redirect_to bill_path(@item.bill_id), status: :see_other, notice: "Item eliminado" }
+      format.turbo_stream
+    end
   end
 
   private
