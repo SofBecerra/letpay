@@ -4,6 +4,7 @@
         <strong><%= item.user.nickname %></strong>
         <strong><%= item.category %></strong>
         <strong>$ <%= number_to_currency(item.price) %></strong>
+        <%= link_to 'Eliminar', bill_path(@bill) , data: { turbo_method: :delete, turbo_confirm: '¿Estás seguro?' }, class: "btn btn-primary bi bi-trash3" %>
       </p>
     </div>
 <% end %>
