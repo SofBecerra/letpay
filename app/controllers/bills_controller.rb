@@ -27,7 +27,7 @@ class BillsController < ApplicationController
     @total = @bill.total_amount
     @consumptions = @bill.consumption_by_user
     @tip = Tip.new
-    @tip_percent = Tip.where(bill_id: @bill.id).last.tip
+    Tip.where(bill_id: @bill.id).empty? ? @tip_percent = 0 : @tip_percent = Tip.where(bill_id: @bill.id).last.tip
   end
 
 
