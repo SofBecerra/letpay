@@ -27,7 +27,5 @@ class Bill < ApplicationRecord
   end
 
   def tip
-
   end
-
 end

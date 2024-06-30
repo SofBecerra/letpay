@@ -30,7 +30,6 @@ class BillsController < ApplicationController
     Tip.where(bill_id: @bill.id).empty? ? @tip_percent = 0 : @tip_percent = Tip.where(bill_id: @bill.id).last.tip
   end
 
-
   def items
     @items = Item.all
     @bill = Bill.find(params[:id])
@@ -38,7 +37,6 @@ class BillsController < ApplicationController
     @item = Item.new
     @items = @bill.items
   end
-
 
   def layout
     @items = Item.all
@@ -67,6 +65,4 @@ class BillsController < ApplicationController
   def tip_params
     params.require(:user).permit(:user_id, :tip)
   end
-
-
 end

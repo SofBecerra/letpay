@@ -20,6 +20,7 @@
                     <% @bill.consumption_by_user.each do |user, amount| %>
                         <div class="user-amount">
                             <strong><%= user.nickname %></strong>
+                             <strong>$<%= number_to_currency(amount, unit: '') %></strong>
                             <strong>$<%= number_to_currency(amount + ((amount.to_f * @tip_percent) / 100), unit: '') %></strong>
                             <!-- Agregue el calculo
                             amount + ((amount.to_f * @tip_percent) / 100)
