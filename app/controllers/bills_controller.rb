@@ -26,7 +26,9 @@ class BillsController < ApplicationController
     @bill = Bill.find(params[:id])
     @total = @bill.total_amount
     @consumptions = @bill.consumption_by_user
+    @tip = Tip.new
   end
+
 
   def items
     @items = Item.all
@@ -46,7 +48,7 @@ class BillsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])  # Encuentra la factura
+    @item = Item.find(params[:id])
     @item.destroy
     redirect_to bill_path, status: :see_other, notice: 'Item eliminado'
   end
@@ -60,5 +62,10 @@ class BillsController < ApplicationController
   def item_params
     params.require(:item).permit(:category, :price, :item_id)
   end
+
+  def item_params
+    params.require(:user).permit(:user_id, :tip)
+  end
+
 
 end

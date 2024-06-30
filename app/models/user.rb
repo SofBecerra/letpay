@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :events
   has_many :items
+  has_many :tips
 end
