@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :items, only: [:destroy, :update]
 
+  post "bills/:id/calculate/tips", to: "tips#create", as: :tips
+
   resources :bills do
     member do
       get :participants
