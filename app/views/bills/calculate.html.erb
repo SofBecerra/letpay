@@ -17,18 +17,26 @@
 
                 <div class="result-box">
                     <h5>Cada uno debe pagar:</h5>
-
                     <% @bill.consumption_by_user.each do |user, amount| %>
                         <div class="user-amount">
                             <strong><%= user.nickname %></strong>
-                            <strong>$<%= number_to_currency(amount, unit: '') %></strong>
+                             <strong>$<%= number_to_currency(amount, unit: '') %></strong>
+                            <strong>$<%= number_to_currency(amount + ((amount.to_f * @tip_percent) / 100), unit: '') %></strong>
+                            <!-- Agregue el calculo
+                            amount + ((amount.to_f * @tip_percent) / 100)
+                            para que se muestre el total a pagar por cada usuario
+                            Agregue  <h6 class=" text-black">P:<%= "#{@tip_percent}%"%></h6> para mostrar el porcentaje de propina
+                            -->
+                            <h6 class=" text-black">P:<%= "#{@tip_percent}%"%></h6>
                         </div>
                     <% end %>
 
 
                   <!--Propina-->
 <%# @users.each do |user| %>
-    <%= simple_form_for @bill  do |f| %>
+    <%= simple_form_for @tip  do |f| %>
+
+      <!-- @tip direcciona a la ruta  post "bills/:id/calculate/tips", to: "tips#create", as: :tips-->
       <div class="form-check form-check-inline">
         <%= f.radio_button :tip, '10', class: 'form-check-input', id: 'tip_10' %>
         <%= f.label "tip_10", class: "form-check-label", for: "tip_10" do %>

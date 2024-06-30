@@ -27,8 +27,8 @@ class BillsController < ApplicationController
     @total = @bill.total_amount
     @consumptions = @bill.consumption_by_user
     @tip = Tip.new
+    Tip.where(bill_id: @bill.id).empty? ? @tip_percent = 0 : @tip_percent = Tip.where(bill_id: @bill.id).last.tip
   end
-
 
   def items
     @items = Item.all
@@ -37,7 +37,6 @@ class BillsController < ApplicationController
     @item = Item.new
     @items = @bill.items
   end
-
 
   def layout
     @items = Item.all
@@ -63,9 +62,7 @@ class BillsController < ApplicationController
     params.require(:item).permit(:category, :price, :item_id)
   end
 
-  def item_params
+  def tip_params
     params.require(:user).permit(:user_id, :tip)
   end
-
-
 end
