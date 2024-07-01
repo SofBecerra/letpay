@@ -11,17 +11,17 @@
     <div class="custom-layout">
         <div class="container-custom3">
             <h1>Participantes</h1>
-            
+            <h1 class="badge bg-<%= current_user.color %>"> <%= current_user.color %> </h1>
             <div class="participants-container">
                 <% @participants.each do |participant| %>
-                    <div class="participant-card">
+                    <div class="participant-card participant-card--<%= participant.color %>">
                         <%= participant.nickname %>
                     </div>
                 <% end %>
             </div>
         </div>
     </div>
-    
+
     <div class="footer-wrapper">
         <div class="button-container">
             <%= link_to participants_bill_path(@bill), class: "icon-button" do %>
