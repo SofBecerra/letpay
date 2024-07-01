@@ -1,0 +1,46 @@
+.participant-card {
+  width: 250px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+
+  &--black {
+    border-left: 12px solid #000000;
+  }
+
+  &--red {
+    border-left: 12px solid #FF0000;
+  }
+  &--green {
+    border-left: 12px solid #00FF00;
+  }
+  &--blue {
+     border-left: 12px solid #0000FF;
+    }
+
+  &--yellow {
+    border-left: 12px solid #FFFF00;
+   }
+
+  &--purple {
+     border-left: 12px solid #800080;
+    }
+
+  &--orange {
+     border-left: 12px solid #FFA500;
+     }
+
+  &--pink {
+    border-left: 12px solid #FFC0CB;
+  }
+
+  &--cyan {
+     border-left: 12px solid #00FFFF;
+    }
+}

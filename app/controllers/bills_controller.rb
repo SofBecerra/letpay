@@ -19,7 +19,7 @@ class BillsController < ApplicationController
 
   def participants
     @bill = Bill.find(params[:id])
-    @participants = @bill.users.distinct.select(:id, :nickname)
+    @participants = @bill.users.distinct.select(:id, :nickname, :color)
   end
 
   def calculate
