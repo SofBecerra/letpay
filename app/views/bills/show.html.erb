@@ -12,7 +12,7 @@
     </div>
   <% end %>
  <!--arqui va el turbo frame-->
-    <% turbo_stream_from "items"%> <!-- indica que vamos hacer turo stream -->
+    <%= turbo_stream_from "items"%> <!-- indica que vamos hacer turo stream -->
     <%= turbo_frame_tag "new_item" %> <!--crea un contenedor -->
       <%= turbo_frame_tag "items" do %> <!--llama el _items.html para mostrar cada item -->
         <%= render partial: "items/item", collection: @bill.items, as: :item %>  <!-- se usa para que muestre aqui los items en esta pestaña y collecton le pasa los argumentso -->
