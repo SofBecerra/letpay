@@ -1,0 +1,16 @@
+<div id="<%= dom_id ticket %>">
+  <p>
+    <strong>Title:</strong>
+    <%= ticket.title %>
+  </p>
+
+  <div class="row">
+    <div class="col-6">
+      <%= cl_image_tag ticket.photo.key %>
+    </div>
+    <div class="col-6">
+      <%= ticket.text_from_image %>
+    </div>
+  </div>
+
+</div>

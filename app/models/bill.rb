@@ -3,6 +3,7 @@ class Bill < ApplicationRecord
   has_many :items
   has_many :users, through: :items
   has_many :tips
+  has_one :ticket
 
   def sum_items
     items.sum(:price)
