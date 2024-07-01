@@ -4,6 +4,8 @@ class Bill < ApplicationRecord
   has_many :users, through: :items
   has_many :tips
 
+  #after_create_commit { broadcast_prepend_to "item" }
+
   def sum_items
     items.sum(:price)
   end
