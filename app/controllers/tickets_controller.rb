@@ -25,8 +25,7 @@ class TicketsController < ApplicationController
 
     if @ticket.save
       @bill = Bill.find(params[:bill_id])
-      reaisdwdwdw
-      redirect_to bill_tickets_path(@bill), notice: " ticket escaneado"
+      redirect_to bill_ticket_path(@bill), notice: " ticket escaneado"
     else
       render :new, status: :unprocessable_entity
     end
