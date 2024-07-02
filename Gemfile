@@ -54,6 +54,7 @@ gem "rqrcode", "~> 2.0"
 gem "google-cloud-vision"
 gem 'sidekiq'
 gem 'sidekiq-failures'
+  gem "dotenv-rails"
 
 group :development, :test do
   gem "dotenv-rails"

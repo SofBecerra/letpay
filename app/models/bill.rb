@@ -3,6 +3,7 @@ class Bill < ApplicationRecord
   has_many :items
   has_many :users, through: :items
   has_many :tips
+  has_one_attached :photo
 
   #after_create_commit { broadcast_prepend_to "item" }
 
