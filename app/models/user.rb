@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  before_create :add_color,on: :create
+  before_create :add_color
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -23,7 +23,6 @@ class User < ApplicationRecord
   #validates :color, inclusion: { in: colors.keys}
 
   def add_color
-    rand_number = User.colors.values.sample
     self.color = User.colors.values.sample if self.color.nil?
   end
 end
