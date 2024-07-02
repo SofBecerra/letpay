@@ -1,21 +1,26 @@
 
   <div class="container-custom22 ">
 
-    <div class= "row mb-5 mt-5">
-      <div class="text-center ">
-         <%= image_tag "Logo2.png", alt: "Logo2", class: "logo2-image" %>
+    <div class= "row mb-4 mt-4">
+      <div class="text-center mt-5" >
+         <%= image_tag "Logo2.png", alt: "Logo2", class: "logo2-image mt-5"  %>
       </div>
      </div>
 
 
-    <h2 class = " text-black " >¡Comparte tu evento!</h2>
-    <h4 class =" text-black mb-1" >Cada miembro podra verificar </h4>
+    <strong class = " text-black " , style = " font-size: 31px;"> ¡Hola, <%= current_user.nickname %>! </strong>
+    <h3>¡Comparte tu evento!</h2>
+    <h4 class =" text-black mb-1" >Cada miembro podrá verificar </h4>
     <h4 class =" text-black">y agregar sus platos</h4>
     <div class = "container mt-5 mb-5">
+      <div >
            <%= @svg.html_safe %>
-    </div>
-    <h4 class =" text-black mb-1">O envia el siguiente enlace: </h4>
+      </div>
+    <h4 class =" text-black mb-1 mt-5">O envía el siguiente enlace: </h4>
     <h5 class =" text-black"><%= @event.link %></h5>
-      <%= link_to 'Continuar', bill_path(@event.bill), class: "btn btn-custom btn-green w-100 mt-5" %>
+
+      <%= link_to 'Continuar', bill_path(@event.bill), class: "btn btn-custom btn-green w-100 mt-3" %>
+
+    </div>
   </div>
 <!-- una prueba no funciona -->
