@@ -11,14 +11,14 @@
     <div class="custom-layout">
         <div class="container-custom3">
         <div class="custom-layout">
-    <a href="#" class="btn-back">
-      <i class="bi bi-arrow-left"></i>
-    </a>
+      <%= link_to bill_path(@bill), class: 'btn-back', style: 'font-size: 32px; padding-right: 300px;' do %>
+  <i class="bi bi-arrow-left-circle-fill"></i>
+<% end %>
             <h1>Calcular</h1>
-            
+
             <div class="calculation-result">
                 <h4>¡El cálculo está listo!</h4>
-                
+
                 <div class="result-box">
                     <h5>Cada uno debe pagar:</h5>
                     <% @bill.consumption_by_user.each do |user, amount| %>
@@ -63,15 +63,15 @@
                             <%= number_to_currency(@bill.remaining_amount) %>
                         </div>
                     </div>
-                    
+
                     <button class="btn btn-custom btn-green w-100">Compartir</button>
                 </div>
-                
+
                 <%= link_to "Nuevo", root_path, class: "btn btn-custom btn-warning w-100" %>
             </div>
         </div>
     </div>
-    
+
     <div class="footer-wrapper">
         <div class="button-container">
             <%= link_to participants_bill_path(@bill), class: "icon-button" do %>
