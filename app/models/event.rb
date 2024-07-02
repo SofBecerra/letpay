@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  require 'google/cloud/vision'
+  
   belongs_to :user
   has_one :bill
   has_one_attached :qrcode
@@ -30,4 +32,3 @@ class Event < ApplicationRecord
     texts[0]&.description
   end
 end
-
