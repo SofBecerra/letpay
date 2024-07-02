@@ -10,6 +10,7 @@
   <%= simple_form_for @event do |f| %>
     <div class="mb-3">
       <h5 class="text-black"> <%= f.input :name,  label:"¿Cual es tu evento?",  placeholder: '🍽 Nombre del evento' %></h5>
+ <h5 class="text-black"> <%= f.input :photo,  label:"¿agrega photo?",  as: :file %></h5>
     </div>
     <div class="d-grid">
       <%= f.submit 'Crear', class: 'btn btn-custom btn-yellow' %>
