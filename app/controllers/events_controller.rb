@@ -30,9 +30,9 @@ class EventsController < ApplicationController
     @qr = RQRCode::QRCode.new(@event.link)
     @svg = @qr.as_svg(
       offset: 0,
-      color: "000",
+      color: "333333",
       shape_rendering: 'crispEdges',
-      module_size: 7,
+      module_size: 5,
       standanalone: true
       )
   end
