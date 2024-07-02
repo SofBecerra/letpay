@@ -1,3 +1,6 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400,700&display=swap');
+
 // This is where you override default Bootstrap variables
 // 1. Find all Bootstrap variables that you can override at the end of each component's documentation under the `Sass variables` anchor
 // e.g. here are the ones you can override for the navbar https://getbootstrap.com/docs/5.2/components/navbar/#sass-variables
@@ -5,8 +8,8 @@
 // 3. You can override them below!
 
 // General style
-$font-family-sans-serif: 'Arial', sans-serif;
-$headings-font-family: 'Arial', sans-serif;
+$font-family-sans-serif: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$headings-font-family: 'Roboto Condensed', 'Helvetica', 'Arial', sans-serif;
 $body-bg: #ffffff;  // Fondo blanco
 $font-size-base: 1rem;
 
