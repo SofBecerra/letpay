@@ -1,12 +1,19 @@
 <%= turbo_frame_tag dom_id(item) do %>
     <div class="item-display d-flex justify-content-between mt-3" >
-      <div class="item-card">
-      <p class="text-black">
-        <strong><%= item.user.nickname %></strong>
-        <strong><%= item.category %></strong>
-        <strong><%= number_to_currency(item.price) %></strong>
-             <%= link_to '', item_path(item), method: :delete, data: { turbo_method: :delete, turbo_confirm: '¿Estás seguro?' }, class: "btn btn-primary bi bi-trash3" %>
-      </p>
+      <div class="item-card item-card--green">
+        <div class="d-flex flex-column align-items-center", style="font-size: 14px;">
+          <div class="text-center" >
+          <i class="bi bi-person-circle custom-icon custom-icon--green"></i>
+          </div  >
+        <%= item.user.nickname %>
+        </div>
+        <div class="ms-3">
+        <span style="font-weight: lighter;"><%= item.category %>
+        <%= number_to_currency(item.price) %>
+        </div>
+        <div class="ms-auto">
+        <%= link_to '', item_path(item), method: :delete, data: { turbo_method: :delete, turbo_confirm: '¿Estás seguro?' }, class: "btn  bi bi-trash3 custom-icon custom-icon--green" %>
+        </div>
       </div>
     </div>
 <% end %>

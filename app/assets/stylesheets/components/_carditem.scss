@@ -1,6 +1,7 @@
 .item-card {
   width: 250px;
-  padding: 15px;
+  height: 50px;
+  padding: 0px 0px 0px 10px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -9,5 +10,79 @@
   font-size: 16px;
   font-weight: bold;
   text-align: left;
+
+  &--black {
+    border-left: 10px solid #000000;
+  }
+
+  &--red {
+    border-left: 10px solid #FF0000;
+  }
+
+  &--green {
+    border-left: 10px solid #00FF00;
+  }
+
+  &--blue {
+     border-left: 10px solid #0000FF;
+    }
+
+  &--yellow {
+    border-left: 10px solid #FFFF00;
+   }
+
+  &--purple {
+     border-left: 10px solid #800080;
+    }
+
+  &--orange {
+     border-left: 10px solid #FFA500;
+     }
+
+  &--pink {
+    border-left: 10px solid #FFC0CB;
+  }
+
+  &--cyan {
+     border-left: 10px solid #00FFFF;
+  }
 }
 
+.custom-icon {
+
+  &--black {
+    color: #000000;
+  }
+
+  &--red {
+    color: #FF0000;
+  }
+
+  &--green {
+    color: #00FF00;
+  }
+
+  &--blue {
+    color: #0000FF;
+   }
+
+ &--yellow {
+  color: #FFFF00;
+  }
+
+ &--purple {
+  color: #800080;
+   }
+
+ &--orange {
+  color: #FFA500;
+    }
+
+ &--pink {
+  color: #FFC0CB;
+ }
+
+ &--cyan {
+  color: #00FFFF;
+ }
+}
