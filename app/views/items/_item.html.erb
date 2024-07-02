@@ -1,9 +1,10 @@
 <%= turbo_frame_tag dom_id(item) do %>
     <div class="item-display d-flex justify-content-between mt-3" >
-      <div class="item-card item-card--green">
+      <div class="item-card item-card--<%= item.user.color %>">
         <div class="d-flex flex-column align-items-center", style="font-size: 14px;">
+
           <div class="text-center" >
-          <i class="bi bi-person-circle custom-icon custom-icon--green"></i>
+          <i class="bi bi-person-circle custom-icon custom-icon--<%= item.user.color %>"></i>
           </div  >
         <%= item.user.nickname %>
         </div>
@@ -12,7 +13,7 @@
         <%= number_to_currency(item.price) %>
         </div>
         <div class="ms-auto">
-        <%= link_to '', item_path(item), method: :delete, data: { turbo_method: :delete, turbo_confirm: '¿Estás seguro?' }, class: "btn  bi bi-trash3 custom-icon custom-icon--green" %>
+        <%= link_to '', item_path(item), method: :delete, data: { turbo_method: :delete, turbo_confirm: '¿Estás seguro?' }, class: "btn  bi bi-trash3 custom-icon custom-icon--#{ item.user.color }" %>
         </div>
       </div>
     </div>
