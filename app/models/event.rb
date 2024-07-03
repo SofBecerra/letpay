@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  require 'google/cloud/vision'
+
   belongs_to :user
   has_one :bill
   has_one_attached :qrcode
@@ -38,12 +40,16 @@ class Event < ApplicationRecord
     save
   end
 
-  # vision = Google::Cloud::Vision.image_annotator
-  #image_path = photo.url
+  def text_from_image
+    return unless photo.attached?
 
-  # response = vision.text_detection(image: image_path)
-  # texts = response.responses.first.text_annotations
+    vision = Google::Cloud::Vision.image_annotator
+    image_path = photo.url
 
-  # texts[0]&.description
+    response = vision.text_detection(image: image_path)
+    texts = response.responses.first.text_annotations
+
+    texts[0]&.description
+  end
 
 end
