@@ -62,7 +62,6 @@
                         <%= number_to_currency(@bill.remaining_amount) %>
                     </div>
                 </div>
-                <button class="btn btn-custom btn-green w-100">Compartir</button>
             </div>
         </div>
     </div>
@@ -72,9 +71,7 @@
                 <i class="bi bi-person"></i>
                 <p>Participantes</p>
             <% end %>
-            <%= link_to items_bill_path(@bill), class: "btn-circle" do %>
-                <i class="bi bi-plus"></i>
-            <% end %>
+
             <%= link_to calculate_bill_path(@bill), class: "icon-button" do %>
                 <i class="bi bi-receipt"></i>
                 <p>La cuenta</p>
