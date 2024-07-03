@@ -15,8 +15,9 @@ class EventsController < ApplicationController
 
     @event = Event.new(event_params)
     @event.user_id = current_user.id
-    @ticket = Event.last.photo.url
-    if @event.save || @ticket.save
+    #@ticket = Event.last.photo.url
+    if @event.save #|| @ticket.save
+      @event.photo.url.save
       redirect_to event_link_path(@event)
     else
       render :new, status: :unprocessable_entity
