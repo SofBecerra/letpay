@@ -4,8 +4,8 @@ class Event < ApplicationRecord
   has_one_attached :qrcode
   has_many :items, through: :bill
   has_many :participants, through: :items, source: :user
-
-  after_create :generate_bill_and_link
+  has_one_attached :ticket
+  after_create_commit :generate_bill_and_link
 
   def generate_bill_and_link
     bill = Bill.create(event: Event.last, total_amount: 0)
@@ -37,4 +37,13 @@ class Event < ApplicationRecord
 
     save
   end
+
+  # vision = Google::Cloud::Vision.image_annotator
+  #image_path = photo.url
+
+  # response = vision.text_detection(image: image_path)
+  # texts = response.responses.first.text_annotations
+
+  # texts[0]&.description
+
 end
