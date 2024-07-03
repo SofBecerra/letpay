@@ -24,33 +24,33 @@
                         <strong>$<%= number_to_currency(amount + ((amount.to_f * @tip_percent) / 100), unit: '') %></strong>
                     </div>
                 <% end %>
-                <div class="tip-section">
+                <div class="tip-section" data-controller="disabled-button">
                     <h5>Porcentaje de propina a añadir:</h5>
                     <%= simple_form_for @tip do |f| %>
                         <div class="tip-container">
                             <div class="user-amount tip-card">
                                 <div class="tip-options">
                                     <div class="form-check form-check-inline">
-                                        <%= f.radio_button :tip, '10', class: 'form-check-input', id: 'tip_10' %>
+                                        <%= f.radio_button :tip, '10', class: 'form-check-input', id: 'tip_10', data: { action:"click->disabled-button#enabled"} %>
                                         <%= f.label "tip_10", class: "form-check-label", for: "tip_10" do %>
                                             <i class="far fa-circle"></i> 10%
                                         <% end %>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <%= f.radio_button :tip, '15', class: 'form-check-input', id: 'tip_15' %>
+                                        <%= f.radio_button :tip, '15', class: 'form-check-input', id: 'tip_15', data: { action:"click->disabled-button#enabled"} %>
                                         <%= f.label "tip_15", class: "form-check-label", for: "tip_15" do %>
                                             <i class="far fa-circle"></i> 15%
                                         <% end %>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <%= f.radio_button :tip, '20', class: 'form-check-input', id: 'tip_20' %>
+                                        <%= f.radio_button :tip, '20', class: 'form-check-input', id: 'tip_20', data: { action:"click->disabled-button#enabled"} %>
                                         <%= f.label "tip_20", class: "form-check-label", for: "tip_20" do %>
                                             <i class="far fa-circle"></i> 20%
                                         <% end %>
                                     </div>
                                 </div>
                             </div>
-                            <%= f.button :button, type: :submit, class: 'btn btn-custom btn-yellow btn-square' do %>
+                            <%= f.button :button, type: :submit, class: 'btn btn-custom btn-yellow btn-square', data: { disabled_button_target: "button"}, disabled:true do %>
                                 <i class="bi bi-check-lg"></i>
                             <% end %>
                         </div>
