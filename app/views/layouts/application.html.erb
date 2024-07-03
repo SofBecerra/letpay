@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
+ 
+  <link rel="icon" href="<%= asset_path 'logo.ico' %>">
+   
     <title><%= meta_title %></title>
-    <link rel="Logo" href="Logo.png" type="png">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= meta_title %></title>
  <meta name="description" content="<%= meta_description %>">
@@ -25,10 +28,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
   <body>
     <%= render "shared/navbar" %>
@@ -37,6 +40,3 @@
     <%= yield %>
   </body>
 </html>
-
-
-
