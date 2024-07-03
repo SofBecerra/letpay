@@ -39,5 +39,5 @@
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
-
+dump.rdb
 /config/credentials/vision.json

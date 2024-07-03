@@ -4,15 +4,18 @@ class ItemsController < ApplicationController
     @bill = Bill.find(params[:bill_id])
     @item = @bill.items.new(item_params)
     @item.user = current_user
-    if @item.save!
-      respond_to do |format|
-        format.html {redirect_to bill_path(@bill)}
+
+    respond_to do |format|
+      if @item.save
+        format.html { redirect_to bill_path(@bill) }
         format.turbo_stream
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.remove(@event) }
       end
-    else
-      render :new, status: :unprocessable_entity
     end
   end
+
 
   def edit
     @item = Item.find(params[:id])
