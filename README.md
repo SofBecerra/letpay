@@ -1,34 +1,34 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 # LetPay
 
-LetPay es una aplicación web para dividir cuentas de restaurantes/eventos/salidas entre amigos de manera fácil y eficiente.
+LetPay is a web application designed to easily and efficiently split restaurant/event/outing bills among friends.
 
-## Características
+## Features
 
-- Creación de eventos para dividir cuentas
-- Carga manual de ítems consumidos
-- Cálculo automático de la división de la cuenta
-- Interfaz responsiva para uso en móviles
+- Event creation for bill splitting
+- Manual entry of consumed items
+- Automatic calculation of bill splitting
+- Responsive interface for mobile use
 
-## Tecnologías Utilizadas
+## Technologies Used
 
 - Ruby on Rails 7.1.3.4
 - Ruby 
 - PostgreSQL
-- Devise para autenticación de usuarios
+- Devise for user authentication
 
-## Estructura del Modelo
+## Model Structure
 
-La aplicación está estructurada alrededor de los siguientes modelos:
+The application is structured around the following models:
 
-- User: Gestiona la información de los usuarios
-- Event: Representa un evento de división de cuenta
-- Bill: Representa la factura asociada a un evento
-- Item: Representa los ítems individuales en una factura
+- User: Manages user information
+- Event: Represents a bill-splitting event
+- Bill: Represents the bill associated with an event
+- Item: Represents individual items on a bill
 
-## Configuración del Proyecto
+## Project Setup
 
-### Prerrequisitos
+### Prerequisites
 
 - Ruby on Rails 7.1.3.4
 - Rails 
